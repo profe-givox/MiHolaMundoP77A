@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         milbl = findViewById(R.id.lbl);
 
-        milbl.setText("Hola Mundo desde ejecucion");
+        milbl.setText(R.string.app_name);
 
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
-
-
-
 
     }
 

@@ -2,6 +2,7 @@ package com.example.miholamundop77a;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "Prsionando!",
                         Toast.LENGTH_LONG).show();
+
+                Intent i = new
+                        Intent(MainActivity.this,
+                        MySecondActivity.class);
+
+
+                i.putExtra("Tel", "4451234567");
+                i.putExtra("asunto", "Mensaje Urgente");
+                i.putExtra("mensaje", "Reportate de inmediato");
+
+                startActivity(i);
+
             }
         });
 

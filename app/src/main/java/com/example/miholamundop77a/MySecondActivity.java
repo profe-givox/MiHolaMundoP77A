@@ -3,8 +3,10 @@ package com.example.miholamundop77a;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,5 +34,20 @@ public class MySecondActivity extends AppCompatActivity {
         txtAsu.setText(i.getStringExtra("asunto"));
         txtMsj.setText(i.getStringExtra("mensaje"));
 
+    }
+
+    public void btnCancel_click (View v){
+
+        setResult(RESULT_CANCELED);
+
+        finish();
+    }
+    public void btnSubmit_click (View v){
+        Intent e = new Intent();
+        e.putExtra("saludo","Saludos!");
+        setResult(RESULT_OK, e);
+        //setResult(RESULT_OK);
+
+        finish();
     }
 }

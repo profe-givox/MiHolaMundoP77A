@@ -1,5 +1,6 @@
 package com.example.miholamundop77a;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -43,11 +44,31 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("asunto", "Mensaje Urgente");
                 i.putExtra("mensaje", "Reportate de inmediato");
 
-                startActivity(i);
+                //startActivity(i);
+                startActivityForResult(i, 1000);
 
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,
+                                    @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if( requestCode == 1000){
+            if (resultCode==RESULT_OK){
+                Toast.makeText(this,
+                        "SE ENVIO DEL MENSAJE correctsmente",
+                        Toast.LENGTH_LONG).show();
+            }else {
+                Toast.makeText(this,
+                        "SE CANCEL EL ENVIO DEL MENSAJE",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override

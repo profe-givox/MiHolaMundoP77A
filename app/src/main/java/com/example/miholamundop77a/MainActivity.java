@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         MySecondActivity.class);
 
 
-                i.putExtra("Tel", "4451234567");
+                i.putExtra("tel", "4451234567");
                 i.putExtra("asunto", "Mensaje Urgente");
                 i.putExtra("mensaje", "Reportate de inmediato");
 

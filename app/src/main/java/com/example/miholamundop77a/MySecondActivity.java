@@ -43,9 +43,15 @@ public class MySecondActivity extends AppCompatActivity {
         finish();
     }
     public void btnSubmit_click (View v){
-        Intent e = new Intent();
-        e.putExtra("saludo","Saludos!");
-        setResult(RESULT_OK, e);
+
+        Intent i = new Intent();
+
+        i.putExtra("saludo", "Respuesta d e la" +
+                " segunda actvidada");
+
+        setResult(RESULT_OK,i);
+
+
         //setResult(RESULT_OK);
 
         finish();

@@ -61,8 +61,12 @@ public class MainActivity extends AppCompatActivity {
         if( requestCode == 1000){
             if (resultCode==RESULT_OK){
                 Toast.makeText(this,
-                        "SE ENVIO DEL MENSAJE correctsmente",
+                        "SE ENVIO DEL MENSAJE correctsmente" +
+                                data.getStringExtra("saludo")
+                    ,
                         Toast.LENGTH_LONG).show();
+
+                milbl.setText(data.getStringExtra("saludo"));
             }else {
                 Toast.makeText(this,
                         "SE CANCEL EL ENVIO DEL MENSAJE",

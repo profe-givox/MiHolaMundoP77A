@@ -2,4 +2,14 @@
     <string name="app_name">MiHolaMundoP77A</string>
     <string name="boton">Save</string>
     <string name="lbl">Hello World!</string>
+
+    <string-array name="estados">
+        <item>Guanajuato</item>
+        <item>Michoacan</item>
+        <item>Jalisco</item>
+        <item>Aguscalientes</item>
+        <item>Yucatan</item>
+        <item>Tamaulipas</item>
+        <item>Chihuahua</item>
+    </string-array>
 </resources>

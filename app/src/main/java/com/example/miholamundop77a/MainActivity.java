@@ -7,19 +7,54 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView milbl;
     Button btn;
+    Spinner spnE;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        spnE = findViewById(R.id.spnEdos);
+
+        ArrayAdapter<String> adp =
+                new ArrayAdapter<String>
+                        (this,
+                                R.layout.layout_item,
+                                R.id.txtItem,
+                                getResources().getStringArray(R.array.estados)
+                                );
+
+        spnE.setAdapter(adp);
+
+        spnE.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
+
+        spnE.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         Log.i("BOTACORA", "Pasando por el onCREATE");
 

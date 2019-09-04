@@ -10,14 +10,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import javax.microedition.khronos.egl.EGLDisplay;
 
 public class MainActivity extends AppCompatActivity {
     TextView milbl;
     Button btn;
     Spinner spnE;
+    String[] edos;
+
 
 
     @Override
@@ -27,29 +32,25 @@ public class MainActivity extends AppCompatActivity {
 
         spnE = findViewById(R.id.spnEdos);
 
+        edos = getResources().getStringArray(
+                R.array.estados);
+
         ArrayAdapter<String> adp =
                 new ArrayAdapter<String>
                         (this,
                                 R.layout.layout_item,
                                 R.id.txtItem,
-                                getResources().getStringArray(R.array.estados)
+                                edos
                                 );
 
         spnE.setAdapter(adp);
 
-        spnE.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
-
-        spnE.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spnE.setOnItemSelectedListener(new
+                                               AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                        Toast.makeText(MainActivity.this, edos[i] , Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 

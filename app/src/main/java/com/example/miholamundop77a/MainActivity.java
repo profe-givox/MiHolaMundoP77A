@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
                                                AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(MainActivity.this, edos[i] , Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(MainActivity.this,
+                        ((TextView)view.findViewById(R.id.txtItem)).getText() ,
+                        Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {

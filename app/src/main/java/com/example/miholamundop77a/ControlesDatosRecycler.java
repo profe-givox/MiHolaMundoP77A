@@ -1,9 +1,11 @@
 package com.example.miholamundop77a;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,12 +25,13 @@ public class ControlesDatosRecycler extends AppCompatActivity
                 (RecyclerView)
                         findViewById(R.id.my_recycler_view);
 
-        // use this setting to improve performance if you know that changes
+        // use this setting to isetAdmprove performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
+        //layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
 
 
@@ -38,8 +41,6 @@ public class ControlesDatosRecycler extends AppCompatActivity
                 );
 
         recyclerView.setAdapter(mAdapter);
-
-
 
 
     }

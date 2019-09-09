@@ -1,9 +1,11 @@
 package com.example.miholamundop77a;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,9 +14,15 @@ public class MyAdapter
         extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     String[] _dataSet;
+    Context _ctx;
 
     public MyAdapter(String[] dataSet){
         _dataSet =dataSet;
+    }
+
+    public MyAdapter(String[] dataSet, Context ctx){
+        _dataSet =dataSet;
+        _ctx=ctx;
     }
 
     @NonNull
@@ -53,6 +61,15 @@ public class MyAdapter
         public MyViewHolder(View v) {
             super(v);
             textView = v.findViewById(R.id.txtItem);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                     Toast.makeText(view.getContext(),""+
+                             ((TextView)view).getText(),
+                             Toast.LENGTH_LONG).show();
+                }
+            });
+
         }
     }
 
